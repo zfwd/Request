@@ -1,0 +1,27 @@
+{
+    "name": "com.zforward.request.Tests",
+    "rootNamespace": "",
+    "references": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.test-framework",
+            "expression": "",
+            "define": ""
+        },
+        {
+            "name": "com.unity.modules.wind",
+            "expression": "",
+            "define": ""
+        }
+    ],
+    "noEngineReferences": false
+}

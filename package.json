@@ -1,0 +1,22 @@
+{
+  "name": "com.zforward.request",
+  "version": "1.0.0",
+  "displayName": "Request",
+  "description": "Package for Get & Post Requests.",
+  "unity": "2019.1",
+  "unityRelease": "0b5",
+  "documentationUrl": "https://markmozza.com/",
+  "changelogUrl": "https://markmozza.com/",
+  "licensesUrl": "https://markmozza.com/",
+  "keywords": [
+    "API",
+    "Login"
+  ],
+  "author": {
+    "name": "ZForward",
+    "email": "me@markmozza.com",
+    "url": "https://www.markmozza.com"
+  },
+  "type": "library",
+  "hideInEditor": false
+}
