@@ -10,7 +10,7 @@ namespace ZForward
     {
 
         // Post Request
-        public static IEnumerator Post(string uri, object postData, Action<string> callback = null, string xAuthToken = "")
+        public static IEnumerator Post(string uri, object postData, Action<UnityWebRequest> callback = null, string xAuthToken = "")
         {
             // using var webRequest = UnityWebRequest.Post(uri, postData);
             var data = string.IsNullOrEmpty(JsonUtility.ToJson(postData))
@@ -35,15 +35,12 @@ namespace ZForward
             // Request and wait for the desired page.
             yield return webRequest.SendWebRequest();
 
-            var result = ProcessResponse(webRequest);
-            if (result == UnityWebRequest.Result.Success)
-            {
-                callback?.Invoke(webRequest.downloadHandler.text);
-            }
+            // var result = ProcessResponse(webRequest);
+            callback?.Invoke(webRequest);
         }
         
         // Get Request
-        public static IEnumerator Get(string uri, Action<string> callback = null, string xAuthToken = "")
+        public static IEnumerator Get(string uri, Action<UnityWebRequest> callback = null, string xAuthToken = "")
         {
             using var webRequest = UnityWebRequest.Get(uri);
 
@@ -54,11 +51,8 @@ namespace ZForward
             // Request and wait for the desired page.
             yield return webRequest.SendWebRequest();
 
-            var result = ProcessResponse(webRequest);
-            if (result == UnityWebRequest.Result.Success)
-            {
-                callback?.Invoke(webRequest.downloadHandler.text);
-            }
+            // var result = ProcessResponse(webRequest);
+            callback?.Invoke(webRequest);
         }
         
         public static IEnumerator DownloadImage(string mediaUrl, string fileName, Action<Texture2D> callback = null)
